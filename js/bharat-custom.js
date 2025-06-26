@@ -233,7 +233,7 @@ function sendToWhatsApp() {
     return;
   }
 
-  var phoneNumber = "923289919004"; // Your WhatsApp number with country code
+  var phoneNumber = "923144119646"; // Your WhatsApp number with country code
   var whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
     `Hello, my name is ${name}.\nEmail: ${email}\nMessage: ${message}`
   )}`;
