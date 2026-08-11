@@ -22,8 +22,9 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-28 bg-[#0C0C0C] px-6 md:px-12 max-w-7xl mx-auto border-t border-accentBorder/30">
-      <div className="flex items-center gap-3 mb-16">
+    <section id="contact" className="relative z-10 w-full bg-[#0C0C0C] py-28 border-t border-accentBorder/30">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="flex items-center gap-3 mb-16">
         <span className="text-xs uppercase tracking-widest font-semibold text-mutedText">
           07 — CONTACT & COLLABORATION
         </span>
@@ -167,6 +168,7 @@ export const Contact: React.FC = () => {
           </form>
         </motion.div>
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
 };
