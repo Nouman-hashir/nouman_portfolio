@@ -52,8 +52,9 @@ const CharacterRevealText: React.FC<{ text: string }> = ({ text }) => {
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 md:py-28 bg-[#0C0C0C] px-4 sm:px-6 md:px-12 max-w-7xl mx-auto">
-      <div className="flex items-center gap-3 mb-12">
+    <section id="about" className="relative z-10 w-full bg-[#0C0C0C] py-24 md:py-28">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+        <div className="flex items-center gap-3 mb-12">
         <span className="text-xs uppercase tracking-widest font-semibold text-mutedText">
           03 — ABOUT ME
         </span>
@@ -168,6 +169,7 @@ export const About: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
 };
