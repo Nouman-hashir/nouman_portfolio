@@ -33,7 +33,6 @@ export const Projects: React.FC = () => {
     const handleResize = () => updateScrollBounds();
     window.addEventListener('resize', handleResize);
 
-    // Initial slight delay to ensure fonts and layout have fully settled
     const timer = setTimeout(updateScrollBounds, 100);
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -41,14 +40,12 @@ export const Projects: React.FC = () => {
     };
   }, []);
 
-  // Map scroll progress to horizontal translation
   const x = useTransform(
     scrollYProgress,
     [0, 1],
     [0, maxScroll ? -maxScroll : -(PROJECTS.length - 1) * 720]
   );
 
-  // Update active index indicator based on scroll progress
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     const idx = Math.min(
       PROJECTS.length - 1,
@@ -57,7 +54,6 @@ export const Projects: React.FC = () => {
     setActiveIndex(idx);
   });
 
-  // Smooth navigation with arrow buttons or indicators
   const scrollToCard = (index: number) => {
     if (!containerRef.current) return;
     const clampedIndex = Math.max(0, Math.min(PROJECTS.length - 1, index));
@@ -75,7 +71,7 @@ export const Projects: React.FC = () => {
     <section
       id="projects"
       ref={containerRef}
-      className="relative bg-[#0C0C0C] text-lightText rounded-t-[3rem] md:rounded-t-[4.5rem] border-t border-accentBorder/40"
+      className="relative bg-[#030712] text-white rounded-t-[3rem] md:rounded-t-[4.5rem] border-t border-slate-800/80"
       style={{ height: `${PROJECTS.length * 80}vh` }}
     >
       {/* Sticky horizontal viewport */}
@@ -84,41 +80,41 @@ export const Projects: React.FC = () => {
         <div className="max-w-7xl w-full mx-auto flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 shrink-0 z-10">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="text-xs uppercase tracking-widest font-semibold text-mutedText">
+              <span className="text-xs uppercase tracking-[0.28em] font-bold text-brand-300">
                 05 — PORTFOLIO & CASE STUDIES
               </span>
-              <span className="inline-flex items-center gap-1 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-400/20">
+              <span className="inline-flex items-center gap-1 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-300 border border-brand-500/30">
                 <Sparkles size={10} />
                 Horizontal Showcase
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight heading-gradient">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white">
               FEATURED PROJECTS
             </h2>
           </div>
 
           <div className="flex items-center justify-between md:justify-end gap-4 sm:gap-6">
-            <p className="hidden lg:block text-mutedText text-xs sm:text-sm max-w-xs leading-relaxed">
+            <p className="hidden lg:block text-slate-400 text-xs sm:text-sm max-w-xs leading-relaxed">
               Scroll down to slide through projects, or use arrows to jump between them.
             </p>
 
             {/* Project counter & arrow navigation */}
-            <div className="flex items-center gap-3 bg-[#161616] border border-lightText/15 rounded-full px-4 py-2">
-              <span className="font-mono text-xs sm:text-sm text-sky-400 font-bold">
+            <div className="flex items-center gap-3 bg-slate-900/80 backdrop-blur-xl border border-slate-800 rounded-full px-4 py-2 shadow-card">
+              <span className="font-mono text-xs sm:text-sm text-brand-300 font-bold">
                 {String(activeIndex + 1).padStart(2, '0')}
               </span>
-              <span className="text-xs text-mutedText">/</span>
-              <span className="font-mono text-xs sm:text-sm text-mutedText">
+              <span className="text-xs text-slate-600">/</span>
+              <span className="font-mono text-xs sm:text-sm text-slate-400">
                 {String(PROJECTS.length).padStart(2, '0')}
               </span>
 
-              <div className="w-[1px] h-4 bg-lightText/15 mx-1" />
+              <div className="w-[1px] h-4 bg-slate-800 mx-1" />
 
               <button
                 onClick={() => scrollToCard(activeIndex - 1)}
                 disabled={activeIndex === 0}
                 aria-label="Previous project"
-                className="w-7 h-7 rounded-full flex items-center justify-center text-lightText/70 hover:text-lightText hover:bg-white/10 disabled:opacity-30 disabled:hover:bg-transparent transition-all"
+                className="w-7 h-7 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-800 disabled:opacity-30 disabled:hover:bg-transparent transition-all"
               >
                 <ChevronLeft size={16} />
               </button>
@@ -126,7 +122,7 @@ export const Projects: React.FC = () => {
                 onClick={() => scrollToCard(activeIndex + 1)}
                 disabled={activeIndex === PROJECTS.length - 1}
                 aria-label="Next project"
-                className="w-7 h-7 rounded-full flex items-center justify-center text-lightText/70 hover:text-lightText hover:bg-white/10 disabled:opacity-30 disabled:hover:bg-transparent transition-all"
+                className="w-7 h-7 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-800 disabled:opacity-30 disabled:hover:bg-transparent transition-all"
               >
                 <ChevronRight size={16} />
               </button>
@@ -164,8 +160,8 @@ export const Projects: React.FC = () => {
                   onClick={() => scrollToCard(idx)}
                   className={`h-1.5 transition-all duration-300 rounded-full ${
                     idx === activeIndex
-                      ? 'w-8 bg-sky-400'
-                      : 'w-2 bg-lightText/20 hover:bg-lightText/40'
+                      ? 'w-8 bg-brand-400 shadow-glow'
+                      : 'w-2 bg-slate-800 hover:bg-slate-600'
                   }`}
                   aria-label={`Go to project ${idx + 1}: ${proj.title}`}
                 />
@@ -173,16 +169,16 @@ export const Projects: React.FC = () => {
             </div>
 
             {/* Direction indicator */}
-            <span className="text-[11px] uppercase tracking-widest text-mutedText/80 font-mono hidden sm:inline-block">
+            <span className="text-[11px] uppercase tracking-widest text-slate-500 font-mono hidden sm:inline-block">
               Scroll or navigate →
             </span>
           </div>
 
           {/* Glowing continuous progress track */}
-          <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden mt-3">
+          <div className="w-full h-1 bg-slate-800/80 rounded-full overflow-hidden mt-3">
             <motion.div
               style={{ scaleX: scrollYProgress }}
-              className="w-full h-full bg-gradient-to-r from-sky-400 via-sky-300 to-indigo-400 origin-left"
+              className="w-full h-full bg-gradient-to-r from-cyan-400 via-brand-400 to-brand-500 origin-left"
             />
           </div>
         </div>

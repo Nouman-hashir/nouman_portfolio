@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,13 +6,18 @@
 
 :root {
   color-scheme: dark;
+  --background: 3 7 18;
+  --foreground: 248 250 252;
+  --muted: 148 163 184;
+  --card: 15 23 42;
+  --border: 51 65 85;
 }
 
 html {
   scroll-behavior: smooth;
-  font-family: 'Kanit', sans-serif;
-  background-color: #0C0C0C;
-  color: #D7E2EA;
+  font-family: 'Inter', sans-serif;
+  background-color: #030712;
+  color: #F8FAFC;
 }
 
 body {
@@ -20,21 +25,104 @@ body {
   padding: 0;
   overflow-x: clip;
   box-sizing: border-box;
-  background-color: #0C0C0C;
+  background-color: #030712;
+  color: #F8FAFC;
+  min-height: 100vh;
 }
 
-/* Typography Gradient Effect for dark sections */
+::selection {
+  background-color: rgba(42, 168, 255, 0.28);
+  color: #ffffff;
+}
+
+/* Typography Gradient Effect matching Muhammad Afzaal website (.text-gradient) */
+.text-gradient {
+  background-image: linear-gradient(to right, #89dbff 0%, #67e8f9 50%, #2aa8ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .heading-gradient {
-  background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%);
+  background: linear-gradient(180deg, #FFFFFF 30%, #CBD5E1 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
-/* Typography Gradient Effect for white section */
-.heading-gradient-dark {
-  background: linear-gradient(180deg, #1E293B 0%, #0F172A 100%);
+.heading-cyan-gradient {
+  background: linear-gradient(to right, #89dbff 0%, #52c3ff 45%, #2aa8ff 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Glass Card Utility (slate-900 / slate-700 from afzaal site) */
+.glass-card {
+  background-color: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(51, 65, 85, 0.65);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.55);
+}
+
+.glass-card-hover {
+  transition: all 0.3s ease;
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(82, 195, 255, 0.45);
+  box-shadow: 0 0 40px rgba(42, 168, 255, 0.22);
+}
+
+/* Buttons matching Afzaal website */
+.button-primary {
+  background-color: #FFFFFF;
+  color: #020617;
+  box-shadow: 0 0 40px rgba(42, 168, 255, 0.25);
+  border-radius: 9999px;
+  padding: 0.75rem 1.6rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-primary:hover {
+  background-color: #E2E8F0;
+  transform: translateY(-2px);
+  box-shadow: 0 0 50px rgba(42, 168, 255, 0.4);
+}
+
+.button-secondary {
+  border: 1px solid rgba(51, 65, 85, 0.8);
+  background-color: rgba(15, 23, 42, 0.7);
+  color: #FFFFFF;
+  border-radius: 9999px;
+  padding: 0.75rem 1.6rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-secondary:hover {
+  background-color: rgba(30, 41, 59, 0.9);
+  border-color: rgba(137, 219, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Shadow Glow */
+.shadow-glow {
+  box-shadow: 0 0 40px rgba(42, 168, 255, 0.25);
 }
 
 /* Custom marquee animations */

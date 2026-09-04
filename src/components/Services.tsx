@@ -7,15 +7,15 @@ export const Services: React.FC = () => {
   return (
     <section
       id="services"
-      className="bg-[#FFFFFF] text-[#0F172A] rounded-t-[3rem] md:rounded-t-[4.5rem] pt-24 pb-28 px-6 md:px-12 relative z-10"
+      className="relative z-10 w-full bg-[#FFFFFF] text-slate-900 rounded-[3rem] md:rounded-[4.5rem] my-8 py-24 md:py-28 px-6 md:px-12 shadow-2xl"
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-8 border-b border-slate-200 gap-6">
           <div>
-            <span className="text-xs uppercase tracking-widest font-semibold text-slate-500 block mb-3">
+            <span className="text-xs uppercase tracking-[0.28em] font-bold text-brand-600 block mb-3">
               04 — SERVICES & EXPERTISE
             </span>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight heading-gradient-dark">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-slate-950">
               WHAT I DELIVER
             </h2>
           </div>
@@ -37,28 +37,28 @@ export const Services: React.FC = () => {
             >
               <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
                 <div className="md:col-span-2 flex items-center justify-between">
-                  <span className="text-2xl md:text-3xl font-black text-slate-400 group-hover:text-slate-900 transition-colors">
+                  <span className="text-2xl md:text-3xl font-black text-slate-400 group-hover:text-brand-600 transition-colors">
                     {service.number}
                   </span>
-                  <div className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-slate-900 group-hover:text-white transition-all duration-300 md:hidden">
+                  <div className="w-12 h-12 rounded-full border border-slate-200 bg-slate-100 flex items-center justify-center text-slate-700 group-hover:bg-slate-950 group-hover:text-white group-hover:border-slate-950 transition-all duration-300 md:hidden">
                     <ArrowUpRight size={20} />
                   </div>
                 </div>
 
                 <div className="md:col-span-5">
-                  <h3 className="text-2xl sm:text-3xl font-bold uppercase tracking-tight text-slate-900 group-hover:translate-x-2 transition-transform duration-300">
+                  <h3 className="text-2xl sm:text-3xl font-bold uppercase tracking-tight text-slate-950 group-hover:text-brand-600 group-hover:translate-x-2 transition-all duration-300">
                     {service.title}
                   </h3>
                 </div>
 
                 <div className="md:col-span-4">
-                  <p className="text-slate-600 text-base leading-relaxed">
+                  <p className="text-slate-600 text-base leading-relaxed group-hover:text-slate-900 transition-colors">
                     {service.description}
                   </p>
                 </div>
 
                 <div className="md:col-span-1 hidden md:flex justify-end">
-                  <div className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-slate-900 group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                  <div className="w-12 h-12 rounded-full border border-slate-200 bg-slate-100 flex items-center justify-center text-slate-700 group-hover:bg-slate-950 group-hover:text-white group-hover:border-slate-950 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300">
                     <ArrowUpRight size={20} />
                   </div>
                 </div>

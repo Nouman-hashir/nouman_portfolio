@@ -78,14 +78,14 @@ export const CustomCursor: React.FC = () => {
         }}
         animate={{
           scale: isHovered ? 1.7 : 1,
-          borderColor: isHovered ? 'rgba(56, 189, 248, 1)' : 'rgba(56, 189, 248, 0.7)',
-          backgroundColor: isHovered ? 'rgba(56, 189, 248, 0.25)' : 'rgba(56, 189, 248, 0.12)',
+          borderColor: isHovered ? 'rgba(42, 168, 255, 1)' : 'rgba(42, 168, 255, 0.75)',
+          backgroundColor: isHovered ? 'rgba(42, 168, 255, 0.28)' : 'rgba(42, 168, 255, 0.1)',
           boxShadow: isHovered
-            ? '0 0 35px rgba(56, 189, 248, 0.8), inset 0 0 15px rgba(56, 189, 248, 0.4)'
-            : '0 0 20px rgba(56, 189, 248, 0.5), inset 0 0 10px rgba(56, 189, 248, 0.2)',
+            ? '0 0 35px rgba(42, 168, 255, 0.9), inset 0 0 15px rgba(42, 168, 255, 0.4)'
+            : '0 0 20px rgba(42, 168, 255, 0.5), inset 0 0 10px rgba(42, 168, 255, 0.15)',
         }}
         transition={{ duration: 0.18 }}
-        className="w-8 h-8 rounded-full border-2 border-sky-400 backdrop-blur-[1px]"
+        className="w-8 h-8 rounded-full border-2 border-brand-400 backdrop-blur-[1px]"
       />
     </div>
   );
