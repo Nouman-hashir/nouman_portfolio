@@ -2,10 +2,14 @@ export interface Project {
   id: string;
   title: string;
   category: string;
+  subtitle?: string;
   description: string;
   image: string;
   tech: string[];
+  tags?: string[];
   liveUrl?: string;
+  previewUrl?: string;
+  metricTitle?: string;
 }
 
 export interface Service {
@@ -88,51 +92,75 @@ export const PROJECTS: Project[] = [
     id: "cluck-coop",
     title: "Cluck Coop",
     category: "Applications / Smart Farming",
+    subtitle: "SMART FARMING · AGRI-TECH",
     description: "Smart poultry & farm management platform with real-time analytics, order management, and tracking.",
     image: "./img/project-4.png",
+    previewUrl: "app.cluckcoop.com",
+    metricTitle: "Flock Health AI",
+    tags: ["Poultry AI", "IoT Sensors", "Farm Analytics", "Flutter"],
     tech: ["Flutter", "Dart", "REST API", "Firebase"],
   },
   {
     id: "ghoomo-phiroo",
     title: "Ghoomo Phiroo Pakistan",
     category: "Applications / Travel & Navigation",
+    subtitle: "TRAVEL · INTERACTIVE NAVIGATION",
     description: "Comprehensive travel and tourism mobile app for discovering Pakistan's top destinations with interactive guides.",
     image: "./img/project-5.png",
     liveUrl: "https://play.google.com/store/apps/details?id=co.codeminer.gpp&hl=en",
+    previewUrl: "app.ghoomophiroo.pk",
+    metricTitle: "Route Intel",
+    tags: ["Interactive Maps", "Offline Guides", "Tourism AI", "GetX"],
     tech: ["Flutter", "Google Maps API", "GetX", "REST API"],
   },
   {
     id: "task-ai",
     title: "TaskAi",
     category: "Applications / AI Productivity",
+    subtitle: "PRODUCTIVITY · ON-DEVICE AI",
     description: "AI-driven task management application featuring voice command parsing and automated schedule reminders.",
     image: "./img/project-8.png",
+    previewUrl: "taskai.neurooceans.ai",
+    metricTitle: "Neural Voice Engine",
+    tags: ["Voice Parsing", "TensorFlow Lite", "On-Device ML", "Clean Arch"],
     tech: ["Flutter", "TensorFlow Lite", "Voice Input", "Clean Architecture"],
   },
   {
     id: "helper-log",
     title: "Helper log",
     category: "Applications / Utility & Operations",
+    subtitle: "OPERATIONS · OFFLINE-FIRST UTILITY",
     description: "Efficient activity logger and service manager utility app built for high reliability and offline synchronization.",
     image: "./img/project-9.png",
     liveUrl: "https://play.google.com/store/apps/details?id=co.codeminer.helperlog&hl=en",
+    previewUrl: "app.helperlog.io",
+    metricTitle: "Sync Engine",
+    tags: ["Offline First", "Hive Database", "BLoC State", "High Reliability"],
     tech: ["Flutter", "Hive", "REST API", "BLoC"],
   },
   {
     id: "med360",
     title: "Med360",
     category: "Applications / Telemedicine",
+    subtitle: "HEALTHCARE · RPM / TELEMEDICINE",
     description: "Real-time healthcare and telemedicine platform linking patients with doctors, complete with live video/chat & payment gateways.",
     image: "./img/project-1.png",
     liveUrl: "https://play.google.com/store/apps/details?id=co.codeminer.med360&hl=en",
+    previewUrl: "app.med360.health",
+    metricTitle: "AI Insights",
+    tags: ["Healthcare AI", "RPM / CCM", "Live Consultations", "Stripe"],
     tech: ["Flutter", "WebSockets", "Stripe", "BLoC"],
   },
   {
     id: "tradetoday",
     title: "TradeToday",
     category: "Applications / Finance & Trading",
+    subtitle: "FINANCE · REAL-TIME TRADING",
     description: "Real-time stock updates and trading platform interface engineered for ultra-fast updates and high UI responsiveness.",
     image: "./img/project3.png",
+    previewUrl: "app.tradetoday.io",
+    metricTitle: "Live Market Ticker",
+    tags: ["Ultra-Fast Stream", "WebSockets", "Real-time Charts", "Provider"],
     tech: ["Flutter", "WebSockets", "REST API", "Provider"],
   },
 ];
