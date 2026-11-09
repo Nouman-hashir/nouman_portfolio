@@ -89,6 +89,18 @@ export const SERVICES: Service[] = [
 
 export const PROJECTS: Project[] = [
   {
+    id: "restaurant-ordering",
+    title: "Restaurant Online Ordering System",
+    category: "Applications / Food & Hospitality",
+    subtitle: "RESTAURANT TECH · AUTOMATION & TRACKING",
+    description: "Fully automated restaurant online ordering and kitchen management platform featuring interactive digital menus, cart customization, multi-branch support, and live order tracking.",
+    image: "./img/restaurant-ordering.png",
+    previewUrl: "order.crumbsfoods.com",
+    metricTitle: "Live Order Tracking",
+    tags: ["Online Ordering", "Kitchen Management", "Live Tracking", "Flutter"],
+    tech: ["Flutter", "Dart", "REST API", "WebSockets", "Supabase"],
+  },
+  {
     id: "cluck-coop",
     title: "Cluck Coop",
     category: "Applications / Smart Farming",
@@ -150,18 +162,6 @@ export const PROJECTS: Project[] = [
     metricTitle: "AI Insights",
     tags: ["Healthcare AI", "RPM / CCM", "Live Consultations", "Stripe"],
     tech: ["Flutter", "WebSockets", "Stripe", "BLoC"],
-  },
-  {
-    id: "tradetoday",
-    title: "TradeToday",
-    category: "Applications / Finance & Trading",
-    subtitle: "FINANCE · REAL-TIME TRADING",
-    description: "Real-time stock updates and trading platform interface engineered for ultra-fast updates and high UI responsiveness.",
-    image: "./img/project3.png",
-    previewUrl: "app.tradetoday.io",
-    metricTitle: "Live Market Ticker",
-    tags: ["Ultra-Fast Stream", "WebSockets", "Real-time Charts", "Provider"],
-    tech: ["Flutter", "WebSockets", "REST API", "Provider"],
   },
 ];
 
